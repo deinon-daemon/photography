@@ -7,8 +7,7 @@ layout: default
 
     <!-- Header -->
     <header id="header">
-        <link rel="icon" href=
-                "/assets/static/favicon.png"
+        <link rel="icon" href="{{ site.base_url }}{{ site.favicon_loc }}"
               type="image/x-icon">
         <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
         <nav>
@@ -23,8 +22,8 @@ layout: default
         {% for image in site.static_files %}
         {% if image.path contains 'fulls' %}
         <article class="thumb">
-            <a href="{{ site.baseurl }}/images/fulls/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}/images/thumbs/{{ image.name }}" alt=""
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}{{ image.name }}" alt=""
                      data-name="{{ image.name }}"/></a>
             <!--<h2></h2>
             <p></p>-->
