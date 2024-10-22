@@ -1,11 +1,11 @@
 # Base configs
-baseurl: "https://deinon-daemon.github.io/photography"
-#baseurl: "" # Comment the above line and uncomment this to test the website locally
+#baseurl: "https://deinon-daemon.github.io/photography"
+baseurl: "" # Comment the above line and uncomment this to test the website locally
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 
 # UI configs
-title: "Photography by Benjamin Carsley"
+title: "Camera Caesura by Benjamin Carsley"
 subtitle: "film photo, some digital, as well as my archival / small press projects"
 author: "Benjamin Carsley"
 header:
