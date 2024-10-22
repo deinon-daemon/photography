@@ -18,6 +18,11 @@ gulp.task('resize-images', function () {
             imageMagick: true
         }))
         .pipe(gulp.dest('images/fulls'))
+        .pipe(imageResize({
+            width: 512,
+            imageMagick: true
+        }))
+        .pipe(gulp.dest('images/thumbs'));
 });
 
 // compile scss to css

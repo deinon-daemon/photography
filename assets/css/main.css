@@ -2123,6 +2123,32 @@
 
 /* Claude wrote this */
 
+/* Modifications for zoom on images */
+
+/* Add this to your CSS */
+.poptrox-popup .pic {
+	transition: transform 0.3s ease;
+}
+
+.poptrox-popup.zoomed .pic {
+	transform: scale(2);
+	cursor: zoom-out;
+}
+
+.poptrox-popup .pic {
+	cursor: zoom-in;
+}
+
+/* Optional: Improve movement when zoomed */
+.poptrox-popup.zoomed .pic {
+	cursor: move;
+	cursor: grab;
+}
+
+.poptrox-popup.zoomed .pic:active {
+	cursor: grabbing;
+}
+
 /* Modifications to Main section for shape-fitting images */
 #main {
 	display: grid;

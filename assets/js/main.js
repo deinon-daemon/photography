@@ -296,8 +296,51 @@
             usePopupForceClose: true,
             usePopupLoader: true,
             usePopupNav: true,
-            windowMargin: 50
+            windowMargin: 50,
+            overlayColor: '#242629',
+            // Add these new options
+            onPopupInit: function($popup) {
+            // Add click handler for zoom
+            $popup.find('.pic').on('click', function(e) {
+                e.stopPropagation();
+                $popup.toggleClass('zoomed');
+
+                if ($popup.hasClass('zoomed')) {
+                    // Add drag functionality when zoomed
+                    let pos = { left: 0, x: 0 };
+                    const pic = $(this);
+
+                    const mouseMoveHandler = function(e) {
+                        const dx = e.clientX - pos.x;
+                        pic.css('transform', `scale(2) translateX(${dx}px)`);
+                    };
+
+                    const mouseUpHandler = function() {
+                        document.removeEventListener('mousemove', mouseMoveHandler);
+                        document.removeEventListener('mouseup', mouseUpHandler);
+                        pic.css('cursor', 'zoom-out');
+                    };
+
+                    $(this).on('mousedown', function(e) {
+                        e.preventDefault();
+                        pos = {
+                            left: pic.scrollLeft,
+                            x: e.clientX,
+                        };
+
+                        document.addEventListener('mousemove', mouseMoveHandler);
+                        document.addEventListener('mouseup', mouseUpHandler);
+                        pic.css('cursor', 'grabbing');
+                    });
+                } else {
+                    // Reset transform when unzoomed
+                    $(this).css('transform', '');
+                }
+            });
+        }
         });
+
+
 
         // Hack: Set margins to 0 when 'xsmall' activates.
         skel
