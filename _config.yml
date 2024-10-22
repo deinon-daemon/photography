@@ -1,5 +1,4 @@
 # Base configs
-baseurl: "https://deinon-daemon.github.io/photography"
 #baseurl: "" # Comment the above line and uncomment this to test the website locally
 favicon_loc: "/images/favicon/favicon-32x32.png"
 image_fulls_loc: "/images/fulls/"
