@@ -4,12 +4,19 @@ layout: default
 
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Header -->
     <header id="header">
-        <link rel="icon" href="{{ site.base_url }}{{ site.favicon_loc }}"
-              type="image/x-icon">
-        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
+        <link
+            rel="icon"
+            href="{{ site.base_url }}{{ site.favicon_loc }}"
+            type="image/x-icon"
+        />
+        <h1>
+            <a href="index.html"
+                ><strong>{{ site.header.title }}</strong> {{
+                site.header.subtitle }}</a
+            >
+        </h1>
         <nav>
             <ul>
                 <li><a href="#footer" class="icon fa-info-circle">About</a></li>
@@ -18,18 +25,23 @@ layout: default
     </header>
 
     <!-- Main -->
-    <div id="main" data-exif='{{ site.exif }}'>
-        {% for image in site.static_files %}
-        {% if image.path contains 'fulls' %}
+    <div id="main" data-exif="{{ site.exif }}">
+        {% for image in site.static_files %} {% if image.path contains 'fulls'
+        %}
         <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
+            <a
+                href="{{ site.baseurl }}{{ site.image_fulls_loc }}{{ image.name }}"
+                class="image"
+            >
+                <img
+                    src="{{ site.baseurl }}{{ site.image_thumbs_loc }}{{ image.name }}"
+                    alt=""
+                    data-name="{{ image.name }}"
+            /></a>
             <!--<h2></h2>
             <p></p>-->
         </article>
-        {% endif %}
-        {% endfor %}
+        {% endif %} {% endfor %}
     </div>
 
     <!-- Footer -->
@@ -45,78 +57,126 @@ layout: default
                     <h2>Follow me on ...</h2>
                     <ul class="icons">
                         {% if site.social_urls.instagram %}
-                            <li>
-                                <a href="{{ site.social_urls.instagram }}" class="icon fa-instagram">
-                                    <span class="label">Instagram</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if site.social_urls.github %}
-                            <li>
-                                <a href="{{ site.social_urls.github }}" class="icon fa-github">
-                                    <span class="label">GitHub</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a
+                                href="{{ site.social_urls.instagram }}"
+                                class="icon fa-instagram"
+                            >
+                                <span class="label">Instagram</span>
+                            </a>
+                        </li>
+                        {% endif %} {% if site.social_urls.github %}
+                        <li>
+                            <a
+                                href="{{ site.social_urls.github }}"
+                                class="icon fa-github"
+                            >
+                                <span class="label">GitHub</span>
+                            </a>
+                        </li>
                         {% endif %}
                     </ul>
                 </section>
-                <p class="copyright">
+                <!-- <p class="copyright">
                     &copy; {{ site.author }}. Design: {{ site.web_design }}
-                </p>
+                </p> -->
+                <!-- lowkey f*** copyright -->
             </div>
             <div>
                 <section>
                     <h2>Get in touch</h2>
-                    <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
-                          action="https://script.google.com/macros/s/AKfycbxFWDFvXZmLxGYm5_D7slc0L7sT4G6-YPb2vEQVBVVmNyTpD7eH0VnnDMQcjbdcan6n/exec">
+                    <form
+                        class="gform pure-form pure-form-stacked"
+                        method="POST"
+                        data-email="example@email.net"
+                        action="https://script.google.com/macros/s/AKfycbxFWDFvXZmLxGYm5_D7slc0L7sT4G6-YPb2vEQVBVVmNyTpD7eH0VnnDMQcjbdcan6n/exec"
+                    >
                         <!-- change the form action to your script url -->
 
                         <div class="form-elements">
                             <fieldset class="pure-group">
-                                <label for="name">Name: </label>
-                                <input id="name" name="name" placeholder="what name do you prefer?" />
+                                <label class="form-elements" for="name"
+                                    >Name:
+                                </label>
+                                <input
+                                    class="form-elements"
+                                    id="name"
+                                    name="name"
+                                    placeholder="what name do you prefer?"
+                                />
                             </fieldset>
 
                             <fieldset class="pure-group">
                                 <label for="message">Message: </label>
-                                <textarea id="message" name="message" rows="10"
-                                          placeholder="what's on your mind..."></textarea>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="10"
+                                    placeholder="what's on your mind..."
+                                ></textarea>
                             </fieldset>
 
                             <fieldset class="pure-group">
-                                <label for="email"><em>Your</em> Email Address:</label>
-                                <input id="email" name="email" type="email" value=""
-                                       required placeholder="your.name@email.com"/>
+                                <label for="email"
+                                    ><em>Your</em> Email Address:</label
+                                >
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    value=""
+                                    required
+                                    placeholder="your.name@email.com"
+                                />
                             </fieldset>
 
-<!--                            <fieldset class="pure-group">-->
-<!--                                <label for="color">Favourite Color: </label>-->
-<!--                                <input id="color" name="color" placeholder="green" />-->
-<!--                            </fieldset>-->
+                            <!--                            <fieldset class="pure-group">-->
+                            <!--                                <label for="color">Favourite Color: </label>-->
+                            <!--                                <input id="color" name="color" placeholder="green" />-->
+                            <!--                            </fieldset>-->
 
-                            <fieldset class="pure-group honeypot-field" style="display:none">
-                                <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
-                                <input id="honeypot" type="text" name="honeypot" value="" />
+                            <fieldset
+                                class="pure-group honeypot-field"
+                                style="display: none"
+                            >
+                                <label for="honeypot"
+                                    >To help avoid spam, utilize a Honeypot
+                                    technique with a hidden text field; must be
+                                    empty to submit the form! Otherwise, we
+                                    assume the user is a spam bot.</label
+                                >
+                                <input
+                                    id="honeypot"
+                                    type="text"
+                                    name="honeypot"
+                                    value=""
+                                />
                             </fieldset>
 
                             <fieldset class="pure-group" style="padding: 10px">
-                                <button class="button-success pure-button button-xlarge">
-                                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+                                <button
+                                    class="button-success pure-button button-xlarge"
+                                >
+                                    <i class="fa fa-paper-plane"></i>&nbsp;Send
+                                </button>
                             </fieldset>
                         </div>
 
-                        <!-- Customise the Thank-You Message People See when they submit the form: -->
-                        <div class="thankyou_message" style="display:none;">
-                            <h2><em>Thanks</em> for contacting us!
-                                We will get back to you soon!</h2>
+                        <!-- Thank-You Message People See when they submit the form: -->
+                        <div class="thankyou_message" style="display: none">
+                            <h2>
+                                <em>Thanks</em> for reaching out! I will get
+                                back to you soon!
+                            </h2>
                         </div>
-
                     </form>
 
                     <!-- Submit the Form to Google Using "AJAX" -->
-                    <script data-cfasync="false" src="form-submission-handler.js"></script>
+                    <script
+                        data-cfasync="false"
+                        src="form-submission-handler.js"
+                    ></script>
                     <!-- END -->
-
                 </section>
             </div>
         </div>
