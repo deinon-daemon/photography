@@ -1,6 +1,6 @@
 # Base configs
 #baseurl: "" # Comment the above line and uncomment this to test the website locally
-favicon_loc: "/images/favicon/favicon-32x32.png"
+favicon_loc: "/images/favicon/favicon.ico"
 image_fulls_loc: "/images/fulls/"
 image_thumbs_loc: "/images/thumbs/"
 
@@ -13,7 +13,7 @@ header:
   subtitle: "by Benjamin Carsley"
 footer:
   name: "Benjamin Carsley"
-  bio: "Film Photographer [35mm, Medium / Large Format, Instant], Photo Chemistry Alchemist, Camera Repair Nerd, Archivist, Small Press Publisher, Scribbler of Fragments, Translations, and more."
+  bio: "Film Photographer [35mm, Medium / Large Format, Instant], Photo Chemistry Alchemist, Camera Repair Nerd, Archivist, Small Press Publisher, Scribbler of Fragments, Translations, and more..."
   github: "Want your own website like this? Reach out via this form about my pricing for custom web design & development ツ"
 web_design: "BC"
 # Configure which exif data to display
